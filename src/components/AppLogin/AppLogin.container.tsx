@@ -11,6 +11,12 @@ class AppLogin extends Component<any, LoginState> {
         this.state = {
           loggedIn: true
         }
+        //* load fb sdk 
+        const script = document.createElement("script");
+        script.id = 'facebook-jssdk';
+        script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=242707682960835&autoLogAppEvents=1';
+        script.async = true;
+        document.body.appendChild(script);
     };
     render() {
         return (
