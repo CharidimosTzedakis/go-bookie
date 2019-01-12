@@ -9,7 +9,7 @@ const AppLoginComponent: SFC<Props> = (props) => {
     return (
         <div className={props.className}>
             <span>Username:<input/></span>
-            <span>Password:<input type="password"/></span>
+            <span id="password">Password:<input type="password"/></span>
             <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" 
                 data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false">
             </div>
@@ -39,6 +39,12 @@ const AppLoginWidget = styled(AppLoginComponent)/*css*/`
         text-align: center;
         margin-left: 40px;
         margin-top: 10px;
+    }
+    input:focus {
+        outline: none;
+    }
+    span#password {
+        padding-left: 7px;
     }
     button {
         margin-top: 40px;
