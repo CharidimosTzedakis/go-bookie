@@ -10,7 +10,6 @@ class App extends Component {
         <header className="App-header">
           Please login to go-bookie:
           <AppLogin/>
-          <button>Continue with facebook</button>
         </header>
       </div>
     );

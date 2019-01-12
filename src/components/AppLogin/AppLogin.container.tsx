@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import AppLoginComponent from './AppLogin.component' 
-
+import AppLoginWidget from './AppLogin.component'
 
 interface LoginState {
   loggedIn: boolean;
@@ -15,7 +14,10 @@ class AppLogin extends Component<any, LoginState> {
     };
     render() {
         return (
-          <AppLoginComponent />
+          <div>
+            <div id="fb-root"></div>
+            <AppLoginWidget />
+          </div>
         )
     };
   };
