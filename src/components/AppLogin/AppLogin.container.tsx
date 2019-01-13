@@ -26,7 +26,7 @@ class AppLogin extends Component<any, LoginState> {
         return <Redirect push to="/dashboard" />;
       }
       return (
-        <div>
+        <div className="AppLogin">
           <div id="fb-root"></div>
           <AppLoginWidget performLogin={this.performLogin}/>
         </div>
