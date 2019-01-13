@@ -3,15 +3,17 @@ import styled from 'styled-components'
 
 interface Props {
  className?: string,
+ performLogin: () => void,
 }
 
 const AppLoginComponent: SFC<Props> = (props) => {
     return (
         <div className={props.className}>
+            Please login to go-bookie:
             <span>Username:<input/></span>
             <span id="password">Password:<input type="password"/></span>
         <div className="loginButtons">
-            <button className="loginBtn bookieLogin">
+            <button className="loginBtn bookieLogin" onClick={props.performLogin}>
                 Login
             </button>
             <button className="loginBtn loginBtn--facebook">

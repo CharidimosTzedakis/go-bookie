@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import AppLoginWidget from './AppLogin.component'
+import { Redirect } from 'react-router';
 
 interface LoginState {
   loggedIn: boolean;
+  redirect?: boolean;
 }
 
 class AppLogin extends Component<any, LoginState> {
@@ -18,14 +20,22 @@ class AppLogin extends Component<any, LoginState> {
         script.async = true;
         document.body.appendChild(script);
     };
+
     render() {
-        return (
-          <div>
-            <div id="fb-root"></div>
-            <AppLoginWidget />
-          </div>
-        )
+      if (this.state.redirect) {
+        return <Redirect push to="/dashboard" />;
+      }
+      return (
+        <div>
+          <div id="fb-root"></div>
+          <AppLoginWidget performLogin={this.performLogin}/>
+        </div>
+      )
     };
+
+    performLogin = () => {
+      this.setState({redirect: true});
+    }
   };
 
   export default AppLogin;
