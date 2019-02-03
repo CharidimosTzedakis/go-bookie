@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { string } from 'prop-types';
+import BookGallery from '../BookGallery/BookGallery.container'
 
 interface DashBoardProps {
     className?: string,
@@ -14,7 +15,7 @@ class DashBoardComponent extends Component <DashBoardProps, DashBoardState> {
     constructor(props: DashBoardProps){
         super(props);
         this.state = {
-        loggedIn: true
+            loggedIn: true
         };
     }
     render () {
@@ -30,6 +31,7 @@ class DashBoardComponent extends Component <DashBoardProps, DashBoardState> {
                 </div>
                 <div className="content">
                     <div className="title">This is the dashboard!</div>
+                    <BookGallery/>
                 </div>
             </div>
         );
