@@ -11,19 +11,31 @@ interface BookSummaryProps {
 const BookSummaryComponent: SFC<BookSummaryProps> = (props) => {
     return (
         <div className={props.className}>
-            <div>
+            <div className='bookSummaryContainer'>
                 <h2>{props.bookTitle}</h2>
-                <img src={props.imgUrl}/>
-                <span>{props.description}</span>
+                <div>
+                <img className='imageBookSummary' src={props.imgUrl}/>
+                <span className='bookSummaryDescription'>{props.description}</span>
+                </div>
             </div>
         </div>
     );
 }
 
 const BookSummary = styled(BookSummaryComponent)/*css*/`
-    div {
-        width: 100px;
-        height: 200px;
+    .bookSummaryContainer {
+        max-width: 600px;
+        max-height: 300px;
+    }
+    .imageBookSummary {
+        display: inline-block;
+        max-width: 150px;
+        max-height: 250px;
+        width: auto;
+        height: auto;
+    }
+    .bookSummaryDescription {
+        display: inline-block;
     }
 `;
 
