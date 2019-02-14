@@ -26,12 +26,15 @@ const BookSummaryComponent: SFC<BookSummaryProps> = (props) => {
 
 const BookSummary = styled(BookSummaryComponent)/*css*/`
     .image-container {
-        display: flex;
         float: left;
+        margin: 10px;
     }
     .bookSummaryContainer {
         max-width: 600px;
         max-height: 300px;
+        margin: 10px;
+        border: 1px solid;
+        display: flex;
     }
     .imageBookSummary {
         max-width: 150px;
@@ -40,7 +43,7 @@ const BookSummary = styled(BookSummaryComponent)/*css*/`
         height: auto;
     }
     .summary-details {
-        display: flex;
+        margin: 10px;
     }
 `;
 
